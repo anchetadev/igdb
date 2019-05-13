@@ -1,0 +1,8 @@
+import axios from "axios";
+
+export default {
+    // Gets games from the IGDB API
+    getGames: function(q) {
+      return axios.get("/api/games",);
+    },
+};
