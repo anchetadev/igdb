@@ -13,7 +13,7 @@ function GameNavbar() {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link eventKey={2} href="#memes">
+            <Nav.Link eventKey={2} href="https://www.reddit.com/r/dankmemes/">
               Dank memes
             </Nav.Link>
           </Nav>
