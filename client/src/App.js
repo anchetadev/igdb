@@ -4,20 +4,25 @@ import "./App.css";
 import Game from "./components/games";
 import GameNavbar from "./components/navbar";
 import DashHeader from "./components/dashHeader";
-import Modal from "./components/modal"
+import Modal from "./components/modal";
+import Button from "react-bootstrap/Button"
+import ButtonToolbar from "react-bootstrap/ButtonToolbar"
 
 class App extends Component() {
-  state = {
-    modalShow: false
-  };
+  constructor(...args) {
+    super(...args);
+
+    this.state = { modalShow: false };
+  }
   handleShow = () =>{
     this.setState({ show: true })
   }
-  componentDidMount = () => {
-    setTimeout(function() {
-      this.handleShow()
-    })
-  }
+  // this will trigger an modal to popup once the user has been on the homepage for a couple seconds
+  // componentDidMount = () => {
+  //   setTimeout(function() {
+  //     this.handleShow()
+  //   })
+  // }
   render() {
     let modalClose = () => this.setState({ modalShow: false });
     return (
@@ -28,10 +33,19 @@ class App extends Component() {
 
         <GameNavbar />
         <DashHeader />
+        <ButtonToolbar>
+        <Button
+          variant="primary"
+          onClick={() => this.setState({ modalShow: true })}
+        >
+          Launch vertically centered modal
+        </Button>
+
         <Modal
           show={this.state.modalShow}
           onHide={modalClose}
         />
+      </ButtonToolbar>
         <Game />
       </div>
     );
