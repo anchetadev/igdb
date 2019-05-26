@@ -1,4 +1,4 @@
-import { React, Component } from "react";
+import  React from "react";
 import "./App.css";
 
 import Game from "./components/games";
@@ -8,21 +8,23 @@ import Modal from "./components/modal";
 import Button from "react-bootstrap/Button"
 import ButtonToolbar from "react-bootstrap/ButtonToolbar"
 
-class App extends Component() {
+class App extends React.Component {
   constructor(...args) {
     super(...args);
 
-    this.state = { modalShow: false };
+    this.state = { 
+      modalShow: false 
+    };
   }
   handleShow = () =>{
-    this.setState({ show: true })
+
   }
   // this will trigger an modal to popup once the user has been on the homepage for a couple seconds
-  // componentDidMount = () => {
-  //   setTimeout(function() {
-  //     this.handleShow()
-  //   })
-  // }
+  componentDidMount(){
+    setTimeout(function() {
+      this.setState({ modalshow: true })
+    }.bind(this), 5000)
+  }
   render() {
     let modalClose = () => this.setState({ modalShow: false });
     return (
@@ -33,19 +35,11 @@ class App extends Component() {
 
         <GameNavbar />
         <DashHeader />
-        <ButtonToolbar>
-        <Button
-          variant="primary"
-          onClick={() => this.setState({ modalShow: true })}
-        >
-          Launch vertically centered modal
-        </Button>
 
         <Modal
           show={this.state.modalShow}
           onHide={modalClose}
         />
-      </ButtonToolbar>
         <Game />
       </div>
     );
