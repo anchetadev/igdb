@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
-export default class modal extends Component {
+export default class UserModal extends Component {
   render() {
     return (
       <div>
@@ -16,9 +16,10 @@ export default class modal extends Component {
               Hey there!
             </Modal.Title>
           </Modal.Header>
+          {/* add logic to display random text for different modals everytime */}
           <Modal.Body>
             <p>
-              Thanks for visiting :) This website is decked out with bootstrap! It is also built with a Node-Express server and React.js background.
+              user
             </p>
           </Modal.Body>
           <Modal.Footer>
