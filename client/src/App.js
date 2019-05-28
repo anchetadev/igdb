@@ -30,8 +30,8 @@ class App extends React.Component {
     // console.log(this.state.modalshow)
   }
   handleUserModal = () => {
-    this.setState({ userModalShow: true })
-  }
+    this.setState({ userModalShow: true });
+  };
   render() {
     let modalClose = () => this.setState({ modalShow: false });
     let userModalClose = () => this.setState({ userModalShow: false });
@@ -41,20 +41,10 @@ class App extends React.Component {
         {/* interested in how it knows what to show for recommended games, from site it doesn't look very connected to game being 
         viewed */}
 
-        <GameNavbar showLogin={this.handleUserModal}/>
+        <GameNavbar showLogin={this.handleUserModal} />
         <DashHeader />
-
         <Modal show={this.state.modalShow} onHide={modalClose} />
-        <ButtonToolbar>
-          <Button
-            variant="primary"
-            onClick={() => this.setState({ userModalShow: true })}
-          >
-            Launch vertically centered modal
-          </Button>
-
-          <UserModal show={this.state.userModalShow} onHide={userModalClose} />
-        </ButtonToolbar>
+        <UserModal show={this.state.userModalShow} onHide={userModalClose} />
 
         <Game />
       </div>
