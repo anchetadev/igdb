@@ -6,4 +6,8 @@ router
   .route("/")
   .get(gameController.getGames);
 
+  // router
+  // .route("/photos")
+  // .get(gameController.getPhotos);
+
 module.exports = router;

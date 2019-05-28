@@ -15,7 +15,15 @@ export default class Games extends Component {
       })
       console.log(this.state.games)
     });
+    // this.getPhotos()
   };
+  // getPhotos = () => {
+  //   APT.fetchPhotos().then(res => {
+  //     this.setState({
+  //       gamePhotos: res.data
+  //     })
+  //   })
+  // }
   componentDidMount(){
     this.getGames()
   }

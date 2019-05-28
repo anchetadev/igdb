@@ -22,8 +22,9 @@ class App extends React.Component {
   // this will trigger an modal to popup once the user has been on the homepage for a couple seconds
   componentDidMount(){
     setTimeout(function() {
-      this.setState({ modalshow: true })
+      this.setState({ modalShow: true })
     }.bind(this), 5000)
+    // console.log(this.state.modalshow)
   }
   render() {
     let modalClose = () => this.setState({ modalShow: false });
